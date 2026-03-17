@@ -1,6 +1,94 @@
-import React from 'react';
+
+"use client";
+
+import emailjs from '@emailjs/browser';
+import { useRef, useState, useEffect } from 'react';
+
+const AVAILABLE_ITEMS = [
+    "Bún đậu mắm tôm",
+    "Bún đậu thịt luộc",
+    "Bún đậu chả cốm",
+    "Bún đậu tá lả",
+    "Nem rán Hà Nội",
+    "Chả cua bể",
+    "Trà Tắc",
+    "Trà Đá"
+];
 
 export default function BookingSection() {
+    const form = useRef<HTMLFormElement>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [selectedItems, setSelectedItems] = useState<Record<string, number>>({});
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsDropdownOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    const toggleItem = (item: string) => {
+        setSelectedItems(prev => ({
+            ...prev,
+            [item]: (prev[item] || 0) + 1
+        }));
+    };
+
+    const removeItem = (item: string, e?: React.MouseEvent) => {
+        if (e) e.stopPropagation();
+        setSelectedItems(prev => {
+            const next = { ...prev };
+            delete next[item];
+            return next;
+        });
+    };
+
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (!form.current) return;
+        setIsSubmitting(true);
+        const formData = new FormData(form.current);
+        const templateParams: Record<string, unknown> = {
+            "name": formData.get("name") || "",
+            "phone": formData.get("phone") || "",
+            "location": formData.get("location") || "",
+            "code": formData.get("code") || "",
+            "order": Object.entries(selectedItems).map(([name, qty]) => `${name} (x${qty})`).join(", ") || "",
+            "date": new Date().toLocaleDateString("vi-VN"),
+            "time": new Date().toLocaleTimeString("vi-VN", {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false
+            })
+        };
+        emailjs
+            .send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_zwfjdkn',
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_0i8bbrb',
+                templateParams, 
+                {
+                    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'vHuuFTcVGfa6ZgTQ6',
+                }
+            )
+            .then(
+                () => {
+                    alert('Đặt bàn thành công! Chúng tôi sẽ liên hệ với bạn để xác nhận.');
+                    form.current?.reset();
+                    setIsSubmitting(false);
+                },
+                (error) => {
+                    console.error('FAILED...', error.text);
+                    alert('Có lỗi xảy ra, vui lòng thử lại sau.');
+                    setIsSubmitting(false);
+                },
+            );
+    };
+
     return (
         <section className="w-full relative mt-16 mb-8">
             {/* The main dashed border container */}
@@ -25,7 +113,6 @@ export default function BookingSection() {
                     </div>
                     <div className="flex-1 border-t-2 border-dashed border-[#5e4d2f] mr-2 sm:mr-6 md:mr-12"></div>
                 </div>
-
                 <div className="text-center mb-10">
                     <div className="w-24 md:w-32 h-[2px] bg-[#5e4d2f] mx-auto mb-4 md:mb-6"></div>
                     <p className="text-[#5e4d2f] font-mono text-sm md:text-lg font-semibold tracking-wide px-4" style={{ fontFamily: 'var(--font-mono)' }}>
@@ -33,17 +120,22 @@ export default function BookingSection() {
                         đến từ Đậu Homemade
                     </p>
                 </div>
-
                 {/* Form area */}
-                <form className="max-w-3xl mx-auto flex flex-col gap-5">
-                    
+                <form 
+                    ref={form}
+                    onSubmit={sendEmail}
+                    className="max-w-3xl mx-auto flex flex-col gap-5"
+                >
+
                     {/* Row 1 */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
                         {/* HỌ VÀ TÊN */}
                         <div className="border-[2px] border-[#5e4d2f] p-1 bg-white/20">
                             <input 
                                 type="text" 
-                                placeholder="HỌ VÀ TÊN" 
+                                name="name"
+                                placeholder="Họ và tên" 
+                                required
                                 className="w-full border border-[#5e4d2f] bg-transparent px-4 py-3 font-bold text-[#5e4d2f] font-mono placeholder:text-[#5e4d2f] focus:outline-none focus:bg-white/40 transition-colors"
                             />
                         </div>
@@ -51,81 +143,119 @@ export default function BookingSection() {
                         <div className="border-[2px] border-[#5e4d2f] p-1 bg-white/20">
                             <input 
                                 type="tel" 
-                                placeholder="SỐ ĐIỆN THOẠI" 
+                                name="phone"
+                                placeholder="Số điện thoại" 
+                                required
+                                onInput={(e) => {
+                                    e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
+                                }}
                                 className="w-full border border-[#5e4d2f] bg-transparent px-4 py-3 font-bold text-[#5e4d2f] font-mono placeholder:text-[#5e4d2f] focus:outline-none focus:bg-white/40 transition-colors"
                             />
                         </div>
                     </div>
-
                     {/* Row 2 */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
-                        {/* CHI NHÁNH */}
+                        {/* ĐỊA CHỈ */}
                         <div className="md:col-span-2 border-[2px] border-[#5e4d2f] p-1 bg-white/20">
-                            <div className="relative w-full h-full border border-[#5e4d2f]">
-                                <select className="w-full h-full bg-transparent px-4 py-3 font-bold text-[#5e4d2f] font-mono appearance-none focus:outline-none focus:bg-white/40 transition-colors cursor-pointer">
-                                    <option>CHI NHÁNH HOÀNG DIỆU</option>
-                                    <option>CHI NHÁNH QUẬN 1</option>
-                                    <option>CHI NHÁNH ĐIỆN BIÊN PHỦ</option>
-                                </select>
-                                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-[#5e4d2f]">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                                </div>
-                            </div>
+                            <input 
+                                type="text" 
+                                name="location"
+                                placeholder="Địa chỉ nhà" 
+                                required
+                                className="w-full border border-[#5e4d2f] bg-transparent px-4 py-3 font-bold text-[#5e4d2f] font-mono placeholder:text-[#5e4d2f] focus:outline-none focus:bg-white/40 transition-colors"
+                            />
                         </div>
-                        {/* SỐ LƯỢNG NGƯỜI */}
-                        <div className="border-[2px] border-[#5e4d2f] p-1 bg-white/20">
-                            <div className="relative w-full h-full border border-[#5e4d2f]">
-                                <select className="w-full h-full bg-transparent px-4 py-3 font-bold text-[#5e4d2f] font-mono appearance-none focus:outline-none focus:bg-white/40 transition-colors cursor-pointer">
-                                    <option>1 NGƯỜI</option>
-                                    <option>2 NGƯỜI</option>
-                                    <option>3 NGƯỜI</option>
-                                    <option>4+ NGƯỜI</option>
-                                </select>
-                                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-[#5e4d2f]">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Row 3 */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
-                        {/* NGÀY */}
-                        <div className="border-[2px] border-[#5e4d2f] p-1 bg-white/20">
-                            <div className="relative w-full h-full border border-[#5e4d2f]">
-                                <input 
-                                    type="text" 
-                                    placeholder="MM/DD/YYYY" 
-                                    className="w-full h-full bg-transparent px-4 py-3 font-bold text-[#5e4d2f] font-mono placeholder:text-[#5e4d2f] focus:outline-none focus:bg-white/40 transition-colors cursor-pointer"
-                                    onFocus={(e) => (e.target.type = "date")}
-                                    onBlur={(e) => (e.target.type = e.target.value ? "date" : "text")}
-                                />
-                                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-[#5e4d2f]">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                        {/* THỜI GIAN */}
+                        {/* EMAIL */}
                         <div className="border-[2px] border-[#5e4d2f] p-1 bg-white/20">
                             <input 
-                                type="text"
-                                placeholder="THỜI GIAN" 
-                                className="w-full border border-[#5e4d2f] bg-transparent px-4 py-3 font-bold text-[#5e4d2f] font-mono placeholder:text-[#5e4d2f] focus:outline-none focus:bg-white/40 transition-colors cursor-pointer"
-                                onFocus={(e) => (e.target.type = "time")}
-                                onBlur={(e) => (e.target.type = e.target.value ? "time" : "text")}
+                                type="text" 
+                                name="code"
+                                placeholder="Mã giảm giá (nếu có)" 
+                                className="w-full border border-[#5e4d2f] bg-transparent px-4 py-3 font-bold text-[#5e4d2f] font-mono placeholder:text-[#5e4d2f] focus:outline-none focus:bg-white/40 transition-colors"
                             />
                         </div>
                     </div>
-
+                    
+                    {/* Row 4 */}
+                    <div className="grid grid-cols-1 gap-5 md:gap-8">
+                        {/* MÓN HÀNG */}
+                        <div className="border-[2px] border-[#5e4d2f] p-1 bg-white/20">
+                            <div className="relative w-full border border-[#5e4d2f]" ref={dropdownRef}>
+                                <div 
+                                    className="min-h-[50px] w-full bg-transparent px-4 py-[10px] flex flex-wrap gap-2 items-center cursor-pointer transition-colors hover:bg-white/40"
+                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                >
+                                    {Object.keys(selectedItems).length === 0 ? (
+                                        <span className="text-[#5e4d2f] font-mono font-bold opacity-70">
+                                            Chọn món bạn yêu thích (Có thể chọn nhiều)
+                                        </span>
+                                    ) : (
+                                        <div className="flex flex-wrap gap-2 flex-grow">
+                                            {Object.entries(selectedItems).map(([item, qty]) => (
+                                                <div 
+                                                    key={item} 
+                                                    className="flex items-center gap-1 bg-[#5e4d2f] text-vintage-yellow px-3 py-1 rounded-full text-sm font-bold font-mono shadow-sm"
+                                                    onClick={(e) => {
+                                                        // Toggling a selected chip again increments quantity instead of deleting
+                                                        e.stopPropagation();
+                                                        toggleItem(item);
+                                                    }}
+                                                >
+                                                    <span>{item} {qty > 1 && <span className="bg-white/20 px-1.5 py-0.5 rounded-full ml-1 text-xs">x{qty}</span>}</span>
+                                                    <button 
+                                                        type="button" 
+                                                        className="hover:text-white transition-colors ml-1"
+                                                        onClick={(e) => removeItem(item, e)}
+                                                    >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                    <div className="ml-auto text-[#5e4d2f]">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}><path d="m6 9 6 6 6-6"/></svg>
+                                    </div>
+                                </div>
+                                
+                                {isDropdownOpen && (
+                                    <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-sm border-[2px] border-[#5e4d2f] shadow-lg z-50 max-h-60 overflow-y-auto w-[calc(100%+4px)] -ml-[2px] cursor-pointer">
+                                        {AVAILABLE_ITEMS.map(item => {
+                                            const qty = selectedItems[item] || 0;
+                                            const isSelected = qty > 0;
+                                            return (
+                                                <div 
+                                                    key={item}
+                                                    className={`px-4 py-3 font-mono font-bold transition-all flex justify-between items-center border-b border-[#5e4d2f]/10 last:border-0 ${isSelected ? 'bg-[#5e4d2f]/10 text-[#a3381a]' : 'text-[#5e4d2f] hover:bg-black/5'}`}
+                                                    onClick={() => toggleItem(item)}
+                                                >
+                                                    <span>{item}</span>
+                                                    {isSelected && (
+                                                        <div className="flex items-center gap-2">
+                                                            <span className="text-[#a3381a] bg-white/50 px-2 py-0.5 rounded font-black text-sm border border-[#a3381a]/20">x{qty}</span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+                                
+                                <input type="hidden" name="Món Hàng" value={Object.entries(selectedItems).map(([name, qty]) => `${name} (x${qty})`).join(", ")} />
+                            </div>
+                        </div>
+                    </div>
                     {/* Submit Button */}
                     <div className="flex justify-center mt-6">
-                        <button type="submit" className="border-[2px] border-[#5e4d2f] p-1 group">
+                        <button type="submit" disabled={isSubmitting} className="border-[2px] border-[#5e4d2f] p-1 group disabled:opacity-50 disabled:cursor-not-allowed">
                             <div className="bg-vintage-yellow border border-[#5e4d2f] px-12 py-3 group-hover:bg-yellow-400 transition-colors cursor-pointer">
-                                <span className="font-bold text-[#5e4d2f] font-mono tracking-widest uppercase text-lg">ĐẶT BÀN</span>
+                                <span className="font-bold text-[#5e4d2f] font-mono tracking-widest uppercase text-lg">
+                                    {isSubmitting ? 'ĐANG GỬI...' : 'ĐẶT BÀN'}
+                                </span>
                             </div>
                         </button>
                     </div>
-
                 </form>
 
             </div>
