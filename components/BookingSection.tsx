@@ -7,13 +7,13 @@ export default function BookingSection() {
             <div className="relative mx-auto border-x-2 border-b-2 border-dashed border-[#5e4d2f] pt-8 pb-16 px-6 md:px-12 mt-10">
                 {/* Top border with Scissor and Title */}
                 <div className="absolute top-0 left-0 w-full flex items-center justify-center -mt-[25px] sm:-mt-[34px] lg:-mt-[42px]">
-                    <div className="flex-1 border-t-2 border-dashed border-[#5e4d2f] ml-6 md:ml-12"></div>
-                    <div className="px-6 relative flex items-center group">
-                        <h2 className="text-[#a3381a] font-black font-serif text-3xl sm:text-4xl lg:text-5xl uppercase tracking-wider text-shadow-sm whitespace-nowrap" style={{ fontFamily: 'var(--font-heading)' }}>
+                    <div className="flex-1 border-t-2 border-dashed border-[#5e4d2f] ml-2 sm:ml-6 md:ml-12"></div>
+                    <div className="px-2 md:px-6 relative flex items-center group">
+                        <h2 className="text-[#a3381a] font-black font-serif text-2xl sm:text-3xl lg:text-5xl uppercase tracking-wider text-shadow-sm whitespace-nowrap" style={{ fontFamily: 'var(--font-heading)' }}>
                             ORDER NHANH
                         </h2>
                         {/* Scissors icon */}
-                        <div className="absolute -right-2 md:right-0 top-1/2 -translate-y-1/2 text-[#5e4d2f] translate-x-1/2">
+                        <div className="absolute -right-2 md:right-0 top-1/2 -translate-y-1/2 text-[#5e4d2f] translate-x-1/2 hidden sm:block">
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform rotate-180">
                                 <circle cx="6" cy="6" r="3"></circle>
                                 <circle cx="6" cy="18" r="3"></circle>
@@ -23,13 +23,13 @@ export default function BookingSection() {
                             </svg>
                         </div>
                     </div>
-                    <div className="flex-1 border-t-2 border-dashed border-[#5e4d2f] mr-6 md:mr-12"></div>
+                    <div className="flex-1 border-t-2 border-dashed border-[#5e4d2f] mr-2 sm:mr-6 md:mr-12"></div>
                 </div>
 
                 <div className="text-center mb-10">
-                    <div className="w-32 h-[2px] bg-[#5e4d2f] mx-auto mb-6"></div>
-                    <p className="text-[#5e4d2f] font-mono text-base md:text-lg font-semibold tracking-wide" style={{ fontFamily: 'var(--font-mono)' }}>
-                        Đặt bàn ngay để nhận được sự phục vụ tốt nhất<br/>
+                    <div className="w-24 md:w-32 h-[2px] bg-[#5e4d2f] mx-auto mb-4 md:mb-6"></div>
+                    <p className="text-[#5e4d2f] font-mono text-sm md:text-lg font-semibold tracking-wide px-4" style={{ fontFamily: 'var(--font-mono)' }}>
+                        Đặt bàn ngay để nhận được sự phục vụ tốt nhất <br className="hidden md:block"/>
                         đến từ Đậu Homemade
                     </p>
                 </div>

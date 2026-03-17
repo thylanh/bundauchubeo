@@ -7,7 +7,7 @@ function FloatingWidget() {
     return (
         <>
             {/* Top Right Group: Đặt Bàn & Cart */}
-            <div className="fixed right-0 top-1/2 -translate-y-[100%] flex flex-col items-end z-50">
+            <div className="fixed right-0 top-1/2 -translate-y-[100%] flex flex-col items-end z-50 transform scale-75 origin-right md:scale-100 md:origin-center">
                 <div className="flex flex-col bg-vintage-yellow border-t-4 border-l-4 border-b-4 border-vintage-brown shadow-[-4px_4px_0_rgba(0,0,0,0.1)]">
                     <button className="pt-6 pb-4 px-3 hover:bg-yellow-400 transition flex items-center justify-center relative shadow-inner">
                         <span 
@@ -24,7 +24,7 @@ function FloatingWidget() {
             </div>
 
             {/* Bottom Right Group: Phone & Messenger */}
-            <div className="fixed right-4 bottom-6 flex flex-col gap-4 z-50">
+            <div className="fixed right-2 md:right-4 bottom-24 mb-12 md:bottom-6 flex flex-col gap-2 md:gap-4 z-50 transform scale-75 origin-bottom-right md:scale-100 md:origin-center">
                 {/* Phone */}
                 <button className="w-14 h-14 rounded-full bg-vintage-yellow border-[3px] border-vintage-brown flex items-center justify-center shadow-[0_4px_10px_rgba(0,0,0,0.3)] hover:scale-110 transition-transform relative group">
                     <div className="absolute inset-0 rounded-full border border-vintage-brown/40 m-[2px] pointer-events-none"></div>
@@ -62,12 +62,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="fixed inset-0 pointer-events-none border-[12px] border-vintage-brown/5 z-40 mix-blend-multiply"></div>
       
       {/* Absolute Bottom bar (Full width of screen) */}
-      <div className="absolute bottom-0 left-0 w-full h-[30px] md:h-[40px] bg-[#3e2723] flex items-center justify-between px-4 md:px-8 z-[60]">
-        <div className="max-w-6xl w-full mx-auto flex justify-between items-center px-4 md:px-8">
+      <div className="absolute bottom-0 left-0 w-full min-h-[40px] md:h-[40px] py-1 md:py-0 bg-[#3e2723] flex items-center justify-between px-2 md:px-8 z-[60]">
+        <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row justify-between items-center px-2 md:px-8 text-center md:text-left gap-1 md:gap-0">
             <span className="text-[#d4c2a5] font-mono text-[10px] sm:text-xs">
               Copyright © 2018 Dauhomemade.com. All right reserved
             </span>
-            <span className="text-[#d4c2a5] font-mono text-[10px] sm:text-xs text-right">
+            <span className="text-[#d4c2a5] font-mono text-[10px] sm:text-xs">
               Website by Comma
             </span>
         </div>

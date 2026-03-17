@@ -1,7 +1,6 @@
-import React from 'react';
-import HeroLayout from '../components/HeroLayout';
-import EventsSection from '../components/EventsSection';
 import BookingSection from '../components/BookingSection';
+import EventsSection from '../components/EventsSection';
+import HeroLayout from '../components/HeroLayout';
 
 export default function Home() {
   return (
@@ -12,8 +11,8 @@ export default function Home() {
 
        {/* MENU Section preview */}
        <section className="w-full border-4 border-vintage-brown p-8 relative mt-8 bg-white/20 rounded-xl">
-          <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#fdf5e6] px-4 font-bold text-3xl uppercase text-vintage-brown tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
-             MENU HÔM NAY
+          <div className="rounded-sm absolute -top-6 left-1/2 -translate-x-1/2 bg-vintage-yellow px-4 font-bold text-3xl uppercase text-vintage-brown tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
+             MENU
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">

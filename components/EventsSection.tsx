@@ -8,10 +8,10 @@ export default function EventsSection() {
                 
                 {/* Header */}
                 <div className="flex flex-col items-center mb-10 relative ">
-                    <span className="text-[#c62828] font-bold uppercase tracking-[0.2em] text-lg mb-1 drop-shadow-sm font-sans">
+                    <span className="text-[#c62828] font-bold uppercase tracking-[0.2em] text-sm md:text-lg mb-1 drop-shadow-sm font-sans text-center">
                         SỰ KIỆN MỚI TỪ
                     </span>
-                    <h2 className="text-5xl md:text-6xl font-black uppercase tracking-[0.1em] text-center drop-shadow-sm" style={{ fontFamily: 'var(--font-heading)' }}>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-[0.1em] text-center drop-shadow-sm" style={{ fontFamily: 'var(--font-heading)' }}>
                         NHÀ SHEN
                     </h2>
                     {/* Decorative line below title */}
