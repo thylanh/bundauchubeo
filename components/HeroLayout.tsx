@@ -20,9 +20,9 @@ export default function HeroLayout() {
           <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-accent-red"></div>
           <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-accent-red"></div>
           <div className="absolute top-4 left-4 w-4 h-4 bg-accent-red rounded-full"></div>
-          
+
           <div className="text-white/50 font-bold tracking-widest">
-             [ VIDEO CHƯƠNG TRÌNH KHUYẾN MÃI ]
+            [ VIDEO CHƯƠNG TRÌNH KHUYẾN MÃI ]
           </div>
         </div>
 

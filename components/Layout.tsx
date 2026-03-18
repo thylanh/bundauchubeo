@@ -9,12 +9,15 @@ function FloatingWidget() {
             {/* Top Right Group: Đặt Bàn & Cart */}
             <div className="fixed right-0 top-1/2 -translate-y-[100%] flex flex-col items-end z-50 transform scale-75 origin-right md:scale-100 md:origin-center">
                 <div className="flex flex-col bg-vintage-yellow border-t-4 border-l-4 border-b-4 border-vintage-brown shadow-[-4px_4px_0_rgba(0,0,0,0.1)]">
-                    <button className="pt-6 pb-4 px-3 hover:bg-yellow-400 transition flex items-center justify-center relative shadow-inner">
+                    <button 
+                        onClick={() => document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="pt-6 pb-6 px-1 hover:bg-yellow-400 transition flex items-center justify-center relative shadow-inner"
+                    >
                         <span 
                             className="font-bold text-vintage-brown tracking-widest text-sm whitespace-nowrap" 
                             style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
                         >
-                            ĐẶT BÀN NHÀ SHEN
+                            ĐẶT MÓN
                         </span>
                     </button>
                         <div className="absolute top-3/4 -translate-y-1/2 -left-3 w-5 h-5 bg-accent-red border-[3px] border-vintage-brown rounded-full flex items-center justify-center z-10 shadow-sm">
@@ -65,7 +68,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="absolute bottom-0 left-0 w-full min-h-[40px] md:h-[40px] py-1 md:py-0 bg-[#3e2723] flex items-center justify-between px-2 md:px-8 z-[60]">
         <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row justify-between items-center px-2 md:px-8 text-center md:text-left gap-1 md:gap-0">
             <span className="text-[#d4c2a5] font-mono text-[10px] sm:text-xs">
-              Copyright © 2018 Dauhomemade.com. All right reserved
+              Copyright © 2026 Đậu Nhà Shen. All right reserved
             </span>
             <span className="text-[#d4c2a5] font-mono text-[10px] sm:text-xs">
               Website by Comma

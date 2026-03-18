@@ -3,6 +3,7 @@
 
 import emailjs from '@emailjs/browser';
 import { useRef, useState, useEffect } from 'react';
+import { toast } from 'sonner';
 
 const AVAILABLE_ITEMS = [
     "Bún đậu mắm tôm",
@@ -77,20 +78,25 @@ export default function BookingSection() {
             )
             .then(
                 () => {
-                    alert('Đặt bàn thành công! Chúng tôi sẽ liên hệ với bạn để xác nhận.');
+                    toast.success('Success', {
+                        description: 'Bạn đã đặt món thành công! Đậu Nhà Shen sẽ sớm liên hệ xác nhận.'
+                    });
                     form.current?.reset();
+                    setSelectedItems({});
                     setIsSubmitting(false);
                 },
                 (error) => {
                     console.error('FAILED...', error.text);
-                    alert('Có lỗi xảy ra, vui lòng thử lại sau.');
+                    toast.error('Error', {
+                        description: 'Có lỗi xảy ra, vui lòng thử lại sau.'
+                    });
                     setIsSubmitting(false);
                 },
             );
     };
 
     return (
-        <section className="w-full relative mt-16 mb-8">
+        <section id="booking-section" className="w-full relative mt-16 mb-8">
             {/* The main dashed border container */}
             <div className="relative mx-auto border-x-2 border-b-2 border-dashed border-[#5e4d2f] pt-8 pb-16 px-6 md:px-12 mt-10">
                 {/* Top border with Scissor and Title */}
@@ -116,8 +122,8 @@ export default function BookingSection() {
                 <div className="text-center mb-10">
                     <div className="w-24 md:w-32 h-[2px] bg-[#5e4d2f] mx-auto mb-4 md:mb-6"></div>
                     <p className="text-[#5e4d2f] font-mono text-sm md:text-lg font-semibold tracking-wide px-4" style={{ fontFamily: 'var(--font-mono)' }}>
-                        Đặt bàn ngay để nhận được sự phục vụ tốt nhất <br className="hidden md:block"/>
-                        đến từ Đậu Homemade
+                        Đặt món ngay để nhận được sự phục vụ tốt nhất <br className="hidden md:block"/>
+                        đến từ Đậu Nhà Shen
                     </p>
                 </div>
                 {/* Form area */}
@@ -126,7 +132,6 @@ export default function BookingSection() {
                     onSubmit={sendEmail}
                     className="max-w-3xl mx-auto flex flex-col gap-5"
                 >
-
                     {/* Row 1 */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
                         {/* HỌ VÀ TÊN */}
@@ -251,7 +256,7 @@ export default function BookingSection() {
                         <button type="submit" disabled={isSubmitting} className="border-[2px] border-[#5e4d2f] p-1 group disabled:opacity-50 disabled:cursor-not-allowed">
                             <div className="bg-vintage-yellow border border-[#5e4d2f] px-12 py-3 group-hover:bg-yellow-400 transition-colors cursor-pointer">
                                 <span className="font-bold text-[#5e4d2f] font-mono tracking-widest uppercase text-lg">
-                                    {isSubmitting ? 'ĐANG GỬI...' : 'ĐẶT BÀN'}
+                                    {isSubmitting ? 'ĐANG GỬI...' : 'ĐẶT MÓN NGAY'}
                                 </span>
                             </div>
                         </button>
