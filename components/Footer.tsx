@@ -1,3 +1,4 @@
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -8,15 +9,15 @@ export default function Footer() {
           {/* Left Column */}
           <div className="flex-1 lg:max-w-xl z-20">
             <h2 className="text-[#4C643A] font-black font-serif text-xl sm:text-[22px] leading-snug uppercase mb-1 tracking-wider text-shadow-sm text-center lg:text-left">
-              Công ty trách nhiệm hữu hạn<br className="hidden md:block"/>đậu homemade
+              Bún đậu chú béo
             </h2>
             <div className="mb-4 text-[#2b2b2b] tracking-[0.2em] font-bold text-lg text-[#a3381a] leading-none text-center lg:text-left">*****</div>
             <div className="font-mono text-[#2b2b2b] text-sm md:text-[15px] font-semibold flex flex-col items-center lg:items-start text-center lg:text-left">
-              <p><span className="text-[#a3381a] font-bold">Địa chỉ:</span> 91 Xuân Thuỷ, phường Thảo Điền, quận 2, TP. Hồ Chí Minh</p>
-              <p><span className="text-[#a3381a] font-bold">Điện thoại:</span> 0938088284</p>
-              <p><span className="text-[#a3381a] font-bold">Email:</span> info@dauhomemade.com</p>
-              <p><span className="text-[#a3381a] font-bold">Số chứng nhận đăng ký kinh doanh:</span> 0314520024</p>
-              <p><span className="text-[#a3381a] font-bold">Ngày cấp:</span> 17/07/2017</p>
+              <p><span className="text-[#a3381a] font-bold">Địa chỉ:</span> 54 Nơ Trang Long, phường Rạch Dừa, TP. Hồ Chí Minh</p>
+              <p><span className="text-[#a3381a] font-bold">Điện thoại:</span> 0332215823</p>
+              <p><span className="text-[#a3381a] font-bold">Email:</span> bundaumamtomvt1.com</p>
+              <p><span className="text-[#a3381a] font-bold">Số chứng nhận đăng ký kinh doanh:</span> 01234456677</p>
+              <p><span className="text-[#a3381a] font-bold">Ngày cấp:</span> 30/5/2026</p>
               <p><span className="text-[#a3381a] font-bold">Nơi cấp:</span> Sở kế hoạch & đầu tư TP.Hồ Chí Minh</p>
             </div>
           </div>
@@ -29,13 +30,13 @@ export default function Footer() {
               <div className="mb-4 text-[#2b2b2b] tracking-[0.2em] font-bold text-lg text-[#a3381a] leading-none text-center lg:text-left">*****</div>
               
               <div className="grid grid-cols-2 gap-x-2 gap-y-3 font-mono text-[#2b2b2b] text-sm md:text-[15px] font-semibold mb-8 lg:max-w-md xl:max-w-none text-left w-[300px] sm:w-[400px] lg:w-auto">
-                  <a href="#" className="hover:text-[#a3381a] transition-colors leading-tight">Trang chủ</a>
-                  <a href="#" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Cửa hàng</a>
-                  <a href="#" className="hover:text-[#a3381a] transition-colors leading-tight">Menu</a>
-                  <a href="#" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Tuyển dụng</a>
-                  <a href="#" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Đặt bàn</a>
-                  <a href="#" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap"></a>
-                  <a href="#" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Tin tức & sự kiện</a>
+                  <Link href="/" className="hover:text-[#a3381a] transition-colors leading-tight">Trang chủ</Link>
+                  <Link href="/" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Cửa hàng</Link>
+                  <Link href="/" className="hover:text-[#a3381a] transition-colors leading-tight">Menu</Link>
+                  <Link href="/" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Tuyển dụng</Link>
+                  <Link href="/#booking-section" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Đặt bàn</Link>
+                  <div></div>
+                  <Link href="/#events-section" className="hover:text-[#a3381a] transition-colors leading-tight whitespace-nowrap">Tin tức & sự kiện</Link>
                   <div></div>
               </div>
             </div>

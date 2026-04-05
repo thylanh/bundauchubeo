@@ -11,10 +11,6 @@ export default function Home() {
        <EventsSection />
        {/* MENU Section preview */}
        <section className="w-full border-4 border-vintage-brown p-8 relative mt-8 bg-white/20 rounded-xl">
-          <div className="rounded-sm absolute -top-6 left-1/2 -translate-x-1/2 bg-vintage-yellow px-4 font-bold text-3xl uppercase text-vintage-brown tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
-             MENU
-          </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 mb-4">
              {combos.slice(0, 4).map((combo) => (
                <Link href={`/menu/${combo.id}`} key={combo.id} className="group focus:outline-none block">

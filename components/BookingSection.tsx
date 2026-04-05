@@ -79,7 +79,7 @@ export default function BookingSection() {
             .then(
                 () => {
                     toast.success('Success', {
-                        description: 'Bạn đã đặt món thành công! Đậu Nhà Shen sẽ sớm liên hệ xác nhận.'
+                        description: 'Bạn đã đặt món thành công! Bún Đậu Chú Béo sẽ sớm liên hệ xác nhận.'
                     });
                     form.current?.reset();
                     setSelectedItems({});
@@ -123,7 +123,7 @@ export default function BookingSection() {
                     <div className="w-24 md:w-32 h-[2px] bg-[#5e4d2f] mx-auto mb-4 md:mb-6"></div>
                     <p className="text-[#5e4d2f] font-mono text-sm md:text-lg font-semibold tracking-wide px-4" style={{ fontFamily: 'var(--font-mono)' }}>
                         Đặt món ngay để nhận được sự phục vụ tốt nhất <br className="hidden md:block"/>
-                        đến từ Đậu Nhà Shen
+                        đến từ Bún Đậu Chú Béo
                     </p>
                 </div>
                 {/* Form area */}

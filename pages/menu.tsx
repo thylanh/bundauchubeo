@@ -8,10 +8,21 @@ export default function MenuPage() {
   return (
     <div className="flex flex-col gap-12 pt-8 pb-16">
       <Head>
-        <title>Thực đơn - Đậu Nhà Shen</title>
+        <title>Thực đơn - Bún Đậu Chú Béo</title>
       </Head>
 
       <section className="w-full relative px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="mb-8 flex">
+          <Link 
+            href="/" 
+            className="inline-flex items-center gap-2 text-[#3e2723] hover:text-[#A9442A] transition-colors font-bold uppercase tracking-wider text-sm md:text-base border-2 border-[#3e2723] px-3 py-1.5 md:px-4 md:py-2 hover:bg-[#3e2723] hover:text-[#e4ccaa] shadow-[2px_2px_0_rgba(62,39,35,0.2)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+            </svg>
+            Quay về trang chủ
+          </Link>
+        </div>
         {/* Title */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-vintage-brown uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>

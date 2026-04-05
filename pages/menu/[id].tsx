@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { combos } from '../../utils/data';
 import BookingSection from '../../components/BookingSection';
+import ImageMagnifier from '../../components/ImageMagnifier';
+import { combos } from '../../utils/data';
 
 export default function ProductDetail() {
   const router = useRouter();
@@ -16,7 +17,7 @@ export default function ProductDetail() {
   return (
     <div className="flex flex-col pt-8 pb-16 px-4 md:px-8 max-w-6xl mx-auto min-h-[70vh]">
       <Head>
-        <title>{product.title} - Đậu Nhà Shen</title>
+        <title>{product.title} - Bún Đậu Chú Béo</title>
       </Head>
 
       {/* Breadcrumb / Back button */}
@@ -32,7 +33,7 @@ export default function ProductDetail() {
            {/* Exact double border implementation: Outer thick #5e3b22, padding #dcb588, inner thick #5e3b22 */}
            <div className="border-[5px] border-[#4a2e19] p-2 bg-[#dfc39d] shadow-[4px_4px_0_rgba(62,39,35,0.15)]">
               <div className="border-[2px] border-[#4a2e19] relative aspect-[4/3] md:aspect-[5/4] w-full overflow-hidden">
-                 <img src={product.image} alt={product.title} className="absolute inset-0 w-full h-full object-cover" />
+                 <ImageMagnifier src={product.image} alt={product.title} zoomLevel={2.5} />
               </div>
            </div>
         </div>

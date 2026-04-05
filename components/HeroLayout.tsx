@@ -33,7 +33,7 @@ export default function HeroLayout() {
           </h2>
           <p className="font-serif text-base md:text-lg leading-relaxed first-letter:text-5xl md:first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-2 md:first-letter:mr-3 first-letter:mt-1 first-letter:text-accent-red" style={{ fontFamily: 'var(--font-sans)' }}>
             Món ăn này gồm có bún tươi, đậu hũ chiên vàng, thịt luộc, chả cốm, và rau thơm, ăn kèm với mắm tôm pha chế đặc biệt.
-            Bún đậu mắm tôm không chỉ là một món ăn, mà còn là một phần của văn hóa ẩm thực Hà Nội. Đến Vũng Tàu mà chưa ghé qua nhà Shen thưởng thức món này thì quả là một thiếu sót lớn!
+            Bún đậu mắm tôm không chỉ là một món ăn, mà còn là một phần của văn hóa ẩm thực Hà Nội. Đến Vũng Tàu mà chưa ghé qua chú béo thưởng thức món này thì quả là một thiếu sót lớn!
           </p>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function HeroLayout() {
       {/* Right Column: Một vòng Hà Thành */}
       <div className="w-full md:w-1/4 flex flex-col items-center md:items-start text-center md:text-left mt-8 md:mt-0">
         <h2 className="text-3xl md:text-4xl font-bold text-accent-red uppercase tracking-widest mb-4 leading-tight border-b-2 border-vintage-brown pb-4 inline-block w-full" style={{ fontFamily: 'var(--font-heading)' }}>
-          VÒNG QUANH<br/> NHÀ SHEN
+          VÒNG QUANH<br/> BÚN CHÚ BÉO
         </h2>
         <div className="font-serif text-base leading-relaxed text-justify relative before:content-[''] before:w-8 before:h-0.5 before:bg-vintage-brown before:absolute before:-top-2 before:left-1/2 before:-translate-x-1/2" style={{ fontFamily: 'var(--font-sans)' }}>
           <p className="mb-4">

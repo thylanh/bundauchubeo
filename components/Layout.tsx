@@ -68,7 +68,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="absolute bottom-0 left-0 w-full min-h-[40px] md:h-[40px] py-1 md:py-0 bg-[#3e2723] flex items-center justify-between px-2 md:px-8 z-[60]">
         <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row justify-between items-center px-2 md:px-8 text-center md:text-left gap-1 md:gap-0">
             <span className="text-[#d4c2a5] font-mono text-[10px] sm:text-xs">
-              Copyright © 2026 Đậu Nhà Shen. All right reserved
+              Copyright © 2026 Bún Đậu Chú Béo. All right reserved
             </span>
             <span className="text-[#d4c2a5] font-mono text-[10px] sm:text-xs">
               Website by Comma

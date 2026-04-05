@@ -14,9 +14,9 @@ export const combos = [
       'Dưa leo',
       'Rau',
     ],
-    desc: 'Center: a young Vietnamese man in extreme painful full-split pose, body stretched like being torn apart, wearing a torn white t-shirt with patches and torn gray pants. His face is EXACTLY the reference photo provided by the user (short black hair, realistic Vietnamese facial features, same expression as reference).',
+    desc: 'Là phiên bản đầy đủ topping, bao gồm bún lá, đậu mơ rán, chả cốm, chả mực, thịt chân giò hấp, dồi sụn, ba rọi riềng mẻ, dưa leo và rau. Dùng kèm mắm tôm chuẩn vị Bắc, dậy mùi thơm ngon. Bún đậu Homemade đặc biệt phù hợp cho nhóm khách từ 2-3 người dùng.',
     category: 'Bún đậu mắm tôm',
-    image: 'https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/486438818_1172868151513262_3499545522843595809_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeHWo48fmQo5ciTRLgyRowiW3t8dKZk-tiPe3x0pmT62IwgQJhSE6BtCVOiaHRfleqZxt-01zmXM1bqO5ewY20-m&_nc_ohc=B2kn7V4ZonoQ7kNvwEuXrUH&_nc_oc=Adnx71ySxKKr1W__6upfdKuwRGMnv5yH4jopITFcN23tUa2g-FPhdc0KAPuhqFenqEk&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=oOykoxQjfwZyJic3gp1qqQ&_nc_ss=8&oh=00_AfyT1hQDr2GkOxVI4QPNgXNAFgM7fFjKyZdDZqxb2UYuoA&oe=69C08EB2',
+    image: '/images/combo1.jpg',
   },
   {
     id: 2,
@@ -34,8 +34,8 @@ export const combos = [
       'Rau',
     ],
     desc: 'Là phiên bản đầy đủ topping, bao gồm bún lá, đậu mơ rán, chả cốm, chả mực, thịt chân giò hấp, dồi sụn, ba rọi riềng mẻ, dưa leo và rau. Dùng kèm mắm tôm chuẩn vị Bắc, dậy mùi thơm ngon. Bún đậu Homemade đặc biệt phù hợp cho nhóm khách từ 2-3 người dùng.',
-    category: 'Lẩu',
-    image: 'https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/486438818_1172868151513262_3499545522843595809_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeHWo48fmQo5ciTRLgyRowiW3t8dKZk-tiPe3x0pmT62IwgQJhSE6BtCVOiaHRfleqZxt-01zmXM1bqO5ewY20-m&_nc_ohc=B2kn7V4ZonoQ7kNvwEuXrUH&_nc_oc=Adnx71ySxKKr1W__6upfdKuwRGMnv5yH4jopITFcN23tUa2g-FPhdc0KAPuhqFenqEk&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=oOykoxQjfwZyJic3gp1qqQ&_nc_ss=8&oh=00_AfyT1hQDr2GkOxVI4QPNgXNAFgM7fFjKyZdDZqxb2UYuoA&oe=69C08EB2',
+    category: 'Bún đậu mắm tôm',
+    image: '/images/combo2.jpg',
   },
   {
     id: 3,
@@ -53,8 +53,8 @@ export const combos = [
       'Rau',
     ],
     desc: 'Là phiên bản đầy đủ topping, bao gồm bún lá, đậu mơ rán, chả cốm, chả mực, thịt chân giò hấp, dồi sụn, ba rọi riềng mẻ, dưa leo và rau. Dùng kèm mắm tôm chuẩn vị Bắc, dậy mùi thơm ngon. Bún đậu Homemade đặc biệt phù hợp cho nhóm khách từ 2-3 người dùng.',
-    category: 'Lẩu',
-    image: 'https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/486438818_1172868151513262_3499545522843595809_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeHWo48fmQo5ciTRLgyRowiW3t8dKZk-tiPe3x0pmT62IwgQJhSE6BtCVOiaHRfleqZxt-01zmXM1bqO5ewY20-m&_nc_ohc=B2kn7V4ZonoQ7kNvwEuXrUH&_nc_oc=Adnx71ySxKKr1W__6upfdKuwRGMnv5yH4jopITFcN23tUa2g-FPhdc0KAPuhqFenqEk&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=oOykoxQjfwZyJic3gp1qqQ&_nc_ss=8&oh=00_AfyT1hQDr2GkOxVI4QPNgXNAFgM7fFjKyZdDZqxb2UYuoA&oe=69C08EB2',
+    category: 'Bún đậu mắm tôm',
+    image: '/images/combo3.jpg',
   },
   {
     id: 4,
@@ -72,8 +72,8 @@ export const combos = [
       'Rau',
     ],
     desc: 'Là phiên bản đầy đủ topping, bao gồm bún lá, đậu mơ rán, chả cốm, chả mực, thịt chân giò hấp, dồi sụn, ba rọi riềng mẻ, dưa leo và rau. Dùng kèm mắm tôm chuẩn vị Bắc, dậy mùi thơm ngon. Bún đậu Homemade đặc biệt phù hợp cho nhóm khách từ 2-3 người dùng.',
-    category: 'Lẩu',
-    image: 'https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/486438818_1172868151513262_3499545522843595809_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeHWo48fmQo5ciTRLgyRowiW3t8dKZk-tiPe3x0pmT62IwgQJhSE6BtCVOiaHRfleqZxt-01zmXM1bqO5ewY20-m&_nc_ohc=B2kn7V4ZonoQ7kNvwEuXrUH&_nc_oc=Adnx71ySxKKr1W__6upfdKuwRGMnv5yH4jopITFcN23tUa2g-FPhdc0KAPuhqFenqEk&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=oOykoxQjfwZyJic3gp1qqQ&_nc_ss=8&oh=00_AfyT1hQDr2GkOxVI4QPNgXNAFgM7fFjKyZdDZqxb2UYuoA&oe=69C08EB2',
+    category: 'Bún đậu mắm tôm',
+    image: '/images/combo4.jpg',
   },
   {
     id: 5,
@@ -91,7 +91,61 @@ export const combos = [
       'Rau',
     ],
     desc: 'Là phiên bản đầy đủ topping, bao gồm bún lá, đậu mơ rán, chả cốm, chả mực, thịt chân giò hấp, dồi sụn, ba rọi riềng mẻ, dưa leo và rau. Dùng kèm mắm tôm chuẩn vị Bắc, dậy mùi thơm ngon. Bún đậu Homemade đặc biệt phù hợp cho nhóm khách từ 2-3 người dùng.',
-    category: 'Lẩu',
-    image: 'https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/486438818_1172868151513262_3499545522843595809_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeHWo48fmQo5ciTRLgyRowiW3t8dKZk-tiPe3x0pmT62IwgQJhSE6BtCVOiaHRfleqZxt-01zmXM1bqO5ewY20-m&_nc_ohc=B2kn7V4ZonoQ7kNvwEuXrUH&_nc_oc=Adnx71ySxKKr1W__6upfdKuwRGMnv5yH4jopITFcN23tUa2g-FPhdc0KAPuhqFenqEk&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=oOykoxQjfwZyJic3gp1qqQ&_nc_ss=8&oh=00_AfyT1hQDr2GkOxVI4QPNgXNAFgM7fFjKyZdDZqxb2UYuoA&oe=69C08EB2',
+    category: 'Bún đậu mắm tôm',
+    image: '/images/combo5.jpg',
+  }
+];
+
+export const events = [
+  {
+    id: 1,
+    title: 'ĐỔI VOUCHER HOA - TRÚNG QUÀ CỰC ĐÃ',
+    date: '13 THÁNG 03',
+    time: '10 GIỜ 03 PHÚT',
+    shortDesc: 'Tháng 3 này, Bún Đậu Chú Béo cùng các đối tác dành trọn yêu thương đến một nửa thế giới bằng chương trình tri ân vô cùng ý nghĩa. Hãy đến ngay cửa hàng của chúng tôi để nhận những phần quà hấp dẫn không thể bỏ lỡ và tận hưởng bữa ăn tuyệt vời bên người thương.',
+    thumbnail: '/images/combo4.jpg',
+    content: [
+      { type: 'text', value: 'Tháng 3 này, Bún Đậu Chú Béo cùng các đối tác dành trọn yêu thương đến một nửa thế giới bằng chương trình tri ân vô cùng ý nghĩa. Hãy đến ngay cửa hàng của chúng tôi để nhận những phần quà hấp dẫn không thể bỏ lỡ và tận hưởng bữa ăn tuyệt vời bên người thương.' }
+    ]
+  },
+  {
+    id: 2,
+    title: 'LẨU CÁ CHÉP GIÒN NHÚNG MẺ - MÓN ĂN SIGNATURE NHẤT ĐỊNH BẠN PHẢI THỬ KHI ĐẾN',
+    date: '10 THÁNG 03',
+    time: '10 GIỜ 03 PHÚT',
+    shortDesc: 'Lẩu cá chép giòn nhúng mẻ là một trong những món ăn mang đậm hương vị truyền thống, đánh thức mọi giác quan của thực khách. Thịt cá chép dai giòn sần sật kết hợp cùng nước lẩu chua thanh của mẻ, vị cay nồng của ớt tươi và hương thơm nức mũi của các loại rau thơm.',
+    thumbnail: '/images/combo2.jpg',
+    content: [
+      { type: 'text', value: 'Lẩu cá chép giòn nhúng mẻ là một trong những món ăn mang đậm tinh thần Bắc Bộ tại Bún Đậu Chú Béo.' },
+      { type: 'image', value: '/images/combo2.jpg', caption: 'Lẩu cá chép giòn nhúng mẻ - Món ăn mang đậm tinh thần Bắc Bộ' },
+      { type: 'text', value: 'Điểm đặc biệt của món Lẩu này ở sự cân bằng vị giác.\n\nNước lẩu được nấu từ mẻ ủ truyền thống, kết hợp nước xương ninh lâu và cà chua chín, tạo nên vị chua thanh tự nhiên, dịu nhưng không gắt.' },
+      { type: 'image', value: '/images/combo3.jpg', caption: 'Nước lẩu chua thanh' },
+      { type: 'text', value: 'Phần cá chép giòn được nuôi bằng hạt đậu tằm nên thịt săn chắc, chất thịt dai và giòn. Khi nhúng vào nồi lẩu đang sôi nhẹ, cá giữ độ giòn đặc trưng, chớ thật ngọt và chắc, hoàn toàn khác với các loại cá thông thường.' },
+      { type: 'image', value: '/images/combo5.jpg', caption: 'Thịt cá tươi săn chắc' },
+      { type: 'image', value: '/images/combo6.jpg', caption: 'Đánh thức vị giác' },
+      { type: 'text', value: 'Ăn cùng bún tươi, rau xà lách thái rối, thêm chút xíu mắm tôm đánh chanh tạo nên một sự trải nghiệm rất đặc trưng của ẩm thực Hà Nội: vừa nồng nàn, ngọt, đậm đà nhưng lại thanh nhã.\nĐó là lý do vì sao nhiều thực khách xem lẩu cá chép giòn nhúng mẻ như một món signature của Bún Đậu Chú Béo, nhất định phải thử một lần!' }
+    ]
+  },
+  {
+    id: 3,
+    title: 'MÙNG NGÀY 8.3: NHẬN VOUCHER XINH - BỐC THĂM RINH QUÀ XỊN',
+    date: '06 THÁNG 03',
+    time: '10 GIỜ 03 PHÚT',
+    shortDesc: 'Mừng tháng của Nàng, khi đến thưởng thức tại Bún Đậu Chú Béo bạn không chỉ được nhận Voucher vô cùng xinh xắn mà còn có cơ hội bốc thăm rinh quà cực kỳ giá trị. Vừa được ăn ngon, check-in đẹp lại có quà mang về, rủ ngay hội chị em đến chung vui trong tháng 3.',
+    thumbnail: '/images/combo6.jpg',
+    content: [
+      { type: 'text', value: 'Mừng tháng của Nàng, khi đến thưởng thức tại Bún Đậu Chú Béo bạn không chỉ được nhận Voucher vô cùng xinh xắn mà còn có cơ hội bốc thăm rinh quà cực kỳ giá trị. Vừa được ăn ngon, check-in đẹp lại có quà mang về, rủ ngay hội chị em đến chung vui trong tháng 3.' }
+    ]
+  },
+  {
+    id: 4,
+    title: 'THÁNG 3 NGẬP TRÀN ƯU ĐÃI TẠI BÚN ĐẬU CHÚ BÉO',
+    date: '01 THÁNG 03',
+    time: '17 GIỜ 00 PHÚT',
+    shortDesc: 'Hết Tết còn xuân, ẩm thực và thưởng thức những món ăn ngon cùng vô vàn ưu đãi hấp dẫn nhất.',
+    thumbnail: '/images/combo1.jpg',
+    content: [
+      { type: 'text', value: 'Hết Tết còn xuân, ẩm thực và thưởng thức những món ăn ngon cùng vô vàn ưu đãi hấp dẫn nhất...' }
+    ]
   }
 ];
