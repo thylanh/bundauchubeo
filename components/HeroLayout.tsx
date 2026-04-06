@@ -4,9 +4,9 @@ export default function HeroLayout() {
     <section className="w-full flex flex-col md:flex-row gap-8 mb-12">
       {/* Left Column: BAN ĐỌC CHÚ Ý */}
       <div className="hidden md:flex w-full md:w-1/4 flex-col items-center">
-        <div className="w-3/5 md:w-full max-w-[250px] md:max-w-none aspect-square bg-vintage-brown flex flex-col items-center justify-center text-[#fbc02d] relative clip-triangle-bottom border-[4px] md:border-[6px] border-[#fbc02d]">
-          <h3 className="text-3xl md:text-4xl px-2 font-bold mb-10 md:mb-14 text-center leading-tight uppercase" style={{ fontFamily: 'var(--font-heading)' }}>
-            BÚN<br/>NHÀ<br/>SHEN
+        <div className="w-3/5 md:w-full max-w-[250px] md:max-w-none aspect-square bg-vintage-brown flex flex-col items-center justify-center text-[#fbc02d] relative clip-triangle-bottom border-[4px] md:border-[6px] border-[#fbc02d] origin-top animate-bounce-smooth">
+          <h3 className="text-3xl md:text-4xl px-2 font-bold mb-10 md:mb-14 text-center leading-tight uppercase " style={{ fontFamily: 'var(--font-heading)' }}>
+            BÚN<br/>CHÚ<br/>BÉO
           </h3>
           <div className="absolute bottom-0 w-0 h-0 border-l-[60px] md:border-l-[100px] border-l-transparent border-t-[50px] md:border-t-[80px] border-t-vintage-brown border-r-[60px] md:border-r-[100px] border-r-transparent transform translate-y-[48px] md:translate-y-[78px]"></div>
         </div>

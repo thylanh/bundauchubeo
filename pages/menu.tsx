@@ -1,9 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 import BookingSection from '../components/BookingSection';
+import BookingDialog from '../components/BookingDialog';
 import { combos } from '../utils/data';
 
 export default function MenuPage() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<string | undefined>(undefined);
 
   return (
     <div className="flex flex-col gap-12 pt-8 pb-16">
@@ -77,7 +81,14 @@ export default function MenuPage() {
                 </div>
 
                 <div className="mt-8 flex justify-between items-end">
-                  <button className="border-[2px] border-dotted border-[#3e2723] px-2 py-1 md:px-3 md:py-1.5 font-bold text-[#3e2723] uppercase tracking-wider hover:bg-[#3e2723] hover:text-[#e4ccaa] transition-colors text-[11px] md:text-xs shadow-[1.5px_1.5px_0_rgba(62,39,35,0.2)]">
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setSelectedProduct(combo.title);
+                      setIsDialogOpen(true);
+                    }}
+                    className="border-[2px] border-dotted border-[#3e2723] px-2 py-1 md:px-3 md:py-1.5 font-bold text-[#3e2723] uppercase tracking-wider hover:bg-[#3e2723] hover:text-[#e4ccaa] transition-colors text-[11px] md:text-xs shadow-[1.5px_1.5px_0_rgba(62,39,35,0.2)]"
+                  >
                     Đặt món ngay
                   </button>
                 </div>
@@ -92,6 +103,12 @@ export default function MenuPage() {
       <div className="mt-8">
         <BookingSection />
       </div>
+
+      <BookingDialog 
+        isOpen={isDialogOpen} 
+        onClose={() => setIsDialogOpen(false)} 
+        defaultItem={selectedProduct} 
+      />
     </div>
   );
 }

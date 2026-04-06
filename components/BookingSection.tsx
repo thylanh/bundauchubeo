@@ -16,10 +16,13 @@ const AVAILABLE_ITEMS = [
     "Trà Đá"
 ];
 
-export default function BookingSection() {
+export default function BookingSection({ defaultItem }: { defaultItem?: string } = {}) {
     const form = useRef<HTMLFormElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [selectedItems, setSelectedItems] = useState<Record<string, number>>({});
+    const [selectedItems, setSelectedItems] = useState<Record<string, number>>(() => {
+        if (defaultItem) return { [defaultItem]: 1 };
+        return {};
+    });
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -98,9 +101,9 @@ export default function BookingSection() {
     return (
         <section id="booking-section" className="w-full relative mt-16 mb-8">
             {/* The main dashed border container */}
-            <div className="relative mx-auto border-x-2 border-b-2 border-dashed border-[#5e4d2f] pt-8 pb-16 px-6 md:px-12 mt-10">
+            <div className="relative mx-auto border-x-2 border-b-2 border-dashed border-[#5e4d2f] pt-8 pb-8 px-6 md:px-12 md:mx-10" >
                 {/* Top border with Scissor and Title */}
-                <div className="absolute top-0 left-0 w-full flex items-center justify-center -mt-[25px] sm:-mt-[34px] lg:-mt-[42px]">
+                <div className="absolute top-0 left-0 w-full flex items-center justify-center -mt-[25px] sm:-mt-[34px] lg:-mt-[42px] mt-12">
                     <div className="flex-1 border-t-2 border-dashed border-[#5e4d2f] ml-2 sm:ml-6 md:ml-12"></div>
                     <div className="px-2 md:px-6 relative flex items-center group">
                         <h2 className="text-[#a3381a] font-black font-serif text-2xl sm:text-3xl lg:text-5xl uppercase tracking-wider text-shadow-sm whitespace-nowrap" style={{ fontFamily: 'var(--font-heading)' }}>
@@ -114,12 +117,13 @@ export default function BookingSection() {
                                 <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
                                 <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
                                 <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
-                            </svg>
+           Đặt món ngay để nhận được sự phục vụ tốt nhất
+đến từ Bún Đậu Chú Béo                 </svg>
                         </div>
                     </div>
                     <div className="flex-1 border-t-2 border-dashed border-[#5e4d2f] mr-2 sm:mr-6 md:mr-12"></div>
                 </div>
-                <div className="text-center mb-10">
+                <div className="text-center mb-8">
                     <div className="w-24 md:w-32 h-[2px] bg-[#5e4d2f] mx-auto mb-4 md:mb-6"></div>
                     <p className="text-[#5e4d2f] font-mono text-sm md:text-lg font-semibold tracking-wide px-4" style={{ fontFamily: 'var(--font-mono)' }}>
                         Đặt món ngay để nhận được sự phục vụ tốt nhất <br className="hidden md:block"/>
@@ -180,7 +184,6 @@ export default function BookingSection() {
                             />
                         </div>
                     </div>
-                    
                     {/* Row 4 */}
                     <div className="grid grid-cols-1 gap-5 md:gap-8">
                         {/* MÓN HÀNG */}
@@ -252,7 +255,7 @@ export default function BookingSection() {
                         </div>
                     </div>
                     {/* Submit Button */}
-                    <div className="flex justify-center mt-6">
+                    <div className="flex justify-center">
                         <button type="submit" disabled={isSubmitting} className="border-[2px] border-[#5e4d2f] p-1 group disabled:opacity-50 disabled:cursor-not-allowed">
                             <div className="bg-vintage-yellow border border-[#5e4d2f] px-12 py-3 group-hover:bg-yellow-400 transition-colors cursor-pointer">
                                 <span className="font-bold text-[#5e4d2f] font-mono tracking-widest uppercase text-lg">

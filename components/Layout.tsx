@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import BookingDialog from './BookingDialog';
 
 // Floating widget for right side
-function FloatingWidget() {
+function FloatingWidget({ onOpenBooking }: { onOpenBooking: () => void }) {
     return (
         <>
             {/* Top Right Group: Đặt Bàn & Cart */}
             <div className="fixed right-0 top-1/2 -translate-y-[100%] flex flex-col items-end z-50 transform scale-75 origin-right md:scale-100 md:origin-center">
                 <div className="flex flex-col bg-vintage-yellow border-t-4 border-l-4 border-b-4 border-vintage-brown shadow-[-4px_4px_0_rgba(0,0,0,0.1)]">
                     <button 
-                        onClick={() => document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={onOpenBooking}
                         className="pt-6 pb-6 px-1 hover:bg-yellow-400 transition flex items-center justify-center relative shadow-inner"
                     >
                         <span 
@@ -50,6 +51,8 @@ function FloatingWidget() {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
   return (
     <div className="min-h-screen text-vintage-brown font-body relative flex flex-col items-center overflow-x-hidden">
       <div className="w-full max-w-6xl px-4 md:px-8 flex flex-col relative border-x-2 border-vintage-brown/20 bg-white/10 min-h-screen shadow-2xl">
@@ -59,7 +62,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </main>
         <Footer />
       </div>
-      <FloatingWidget />
+      <FloatingWidget onOpenBooking={() => setIsBookingOpen(true)} />
       
       {/* Decorative dirty edges for the page */}
       <div className="fixed inset-0 pointer-events-none border-[12px] border-vintage-brown/5 z-40 mix-blend-multiply"></div>
@@ -75,6 +78,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </span>
         </div>
       </div>
+
+      <BookingDialog 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
     </div>
   );
 }

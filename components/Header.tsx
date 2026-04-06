@@ -3,8 +3,8 @@ export default function Header() {
   return (
     <header className="w-full flex flex-col md:flex-row justify-between items-center md:items-start pt-6 pb-4 border-b-2 border-dashed border-vintage-brown gap-6 md:gap-0">
       {/* Left section: Logo and Menu */}
-      <div className="flex flex-col items-center gap-2">
-        <div className="w-24 h-24 md:w-32 md:h-32 bg-vintage-yellow flex items-center justify-center border-4 border-vintage-brown shadow-md transform -rotate-4 rounded-3xl">
+      <div className="flex flex-col items-center gap-2 animate-swing">
+        <div className="w-24 h-24 md:w-32 md:h-32 bg-vintage-yellow flex items-center justify-center border-4 border-vintage-brown shadow-md rounded-3xl origin-top">
           <div className="text-center font-bold text-vintage-brown flex flex-col items-center">
             <span className="text-3xl md:text-4xl tracking-tighter leading-none" style={{ fontFamily: 'var(--font-heading)' }}>Bún Chú Béo</span>
             <span className="text-sm font-sans tracking-widest mt-1"></span>

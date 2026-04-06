@@ -1,11 +1,14 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import BookingSection from '../../components/BookingSection';
+import BookingDialog from '../../components/BookingDialog';
 import ImageMagnifier from '../../components/ImageMagnifier';
 import { combos } from '../../utils/data';
 
 export default function ProductDetail() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const router = useRouter();
   const { id } = router.query;
   
@@ -65,7 +68,10 @@ export default function ProductDetail() {
 
            {/* Button Row */}
            <div className="mb-8 block">
-              <button className="border-[3px] border-[#4a2e19] p-[2px] group focus:outline-none block w-max bg-[#e4ccaa]">
+              <button 
+                onClick={() => setIsDialogOpen(true)}
+                className="border-[3px] border-[#4a2e19] p-[2px] group focus:outline-none block w-max bg-[#e4ccaa]"
+              >
                  <div className="border-[1px] border-[#4a2e19] bg-[#d2a325] group-hover:bg-[#b88c1b] transition-colors h-10 md:h-11 px-5 flex items-center justify-center">
                     <span className="font-bold text-[#4a2e19] uppercase tracking-wider text-[13px] whitespace-nowrap">Đặt món ngay</span>
                  </div>
@@ -82,6 +88,12 @@ export default function ProductDetail() {
       <div className="mt-8">
         <BookingSection />
       </div>
+
+      <BookingDialog 
+        isOpen={isDialogOpen} 
+        onClose={() => setIsDialogOpen(false)} 
+        defaultItem={product.title} 
+      />
 
     </div>
   );
