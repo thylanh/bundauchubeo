@@ -67,7 +67,7 @@ export default function Header() {
           <div className="text-accent-red font-bold">******</div>
           <div>
             <span className="text-accent-red font-bold">Đien thoai:</span>{" "}
-            0332215823
+            085 662 0789
           </div>
           <div className="text-accent-red font-bold">******</div>
           <div>

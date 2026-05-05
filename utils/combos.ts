@@ -14,12 +14,11 @@ export const combos = [
     desc: "Món bao gồm bún lá, đậu mơ rán, chả cốm, chả mực, thịt luộc, dưa leo và rau. Dùng kèm mắm tôm chuẩn vị Bắc, dậy mùi thơm ngon.",
     category: "Bún đậu mắm tôm",
     image:
-      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1775636516/combo1.jpg",
+      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1777954448/SHE07687_eqjuys.png",
   },
   {
     id: 2,
     title: "BÚN ĐẬU THẬP CẨM 2 NGƯỜI",
-    price: "90.000",
     ingredients: [
       "Bún lá",
       "Đậu hũ",
@@ -31,7 +30,7 @@ export const combos = [
     desc: "Là phiên bản đầy đủ topping, bao gồm bún lá, đậu mơ rán, chả cốm, thịt luộc, dồi sụn, dưa leo và rau. Dùng kèm mắm tôm chuẩn vị Bắc, dậy mùi thơm ngon. Bún đậu Chú Béo đặc biệt phù hợp cho nhóm khách từ 2-3 người dùng.",
     category: "Bún đậu mắm tôm",
     image:
-      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1775636516/combo1.jpg",
+      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1777954581/SHE07652_w6pkss.png",
   },
   {
     id: 3,
@@ -49,7 +48,7 @@ export const combos = [
     desc: "Là phiên bản đầy đủ topping, bao gồm bún lá, đậu hũ, chả cốm, thịt luộc, dồi sụn, dưa leo và rau. Dùng kèm mắm tôm chuẩn vị Bắc, dậy mùi thơm ngon.",
     category: "Bún đậu mắm tôm",
     image:
-      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1775636516/combo2.jpg",
+      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1777954213/SHE07742_rv4lzg.png",
   },
   {
     id: 4,
@@ -77,7 +76,7 @@ export const combos = [
     desc: "Món thêm",
     category: "Món thêm",
     image:
-      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1775636516/combo3.jpg",
+      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1777953917/_DSC8268_nnjjqy.jpg",
   },
   {
     id: 6,
@@ -118,7 +117,7 @@ export const combos = [
     desc: "Món thêm",
     category: "Món thêm",
     image:
-      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1775636516/combo3.jpg",
+      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1777953921/_DSC8286_klfwmd.jpg",
   },
   {
     id: 10,
@@ -138,7 +137,7 @@ export const combos = [
     desc: "Món thêm",
     category: "Món thêm",
     image:
-      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1775636516/combo3.jpg",
+      "https://res.cloudinary.com/dvh3kt3uv/image/upload/v1777953927/SHE07646_rnxeku.png",
   },
   {
     id: 12,
