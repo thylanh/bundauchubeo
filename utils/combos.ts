@@ -19,7 +19,7 @@ export const combos = [
   {
     id: 2,
     title: "BÚN ĐẬU THẬP CẨM 2 NGƯỜI",
-    price: "100.000",
+    price: "90.000",
     ingredients: [
       "Bún lá",
       "Đậu hũ",
